@@ -21,7 +21,7 @@ grad = zeros(size(theta));
 %
 z= X*theta;
 h= sigmoid(z);
-regTheta= theta(2,size(theta));
+regTheta= theta(2:size(theta));
 regJ= (lambda/(2*m)).*(regTheta'*regTheta);
 Jtmp= (1/m).*(-y'*log(h) - (1-y)'*log(1-h)) + regJ;
 % Costo
