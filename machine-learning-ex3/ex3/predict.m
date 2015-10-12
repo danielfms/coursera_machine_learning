@@ -22,6 +22,18 @@ p = zeros(size(X, 1), 1);
 %
 
 
+for i=1: m
+    a_1= X(i,:);
+    a_1 = [ 1 a_1 ];
+    z_2 = a_1*Theta1';
+    a_2 = sigmoid(z_2);
+    a_2 = [1 a_2];
+    z_3 = a_2*Theta2';
+    a_3 = sigmoid(z_3);
+    [ mayor p(i)] = max(a_3); % El mayor de la aproximación, y el indice
+end;
+%A= sigmoid(X*all_theta'); % Aplico la función sigmoidal de los x con los tethas
+%[ip, p]= max(A,[],2);     % Saco el indice del mayor de cada fila, eso me dice la clase
 
 
 

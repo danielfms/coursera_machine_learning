@@ -30,10 +30,8 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
-
-
-
-
+        A= sigmoid(X*all_theta'); % Aplico la función sigmoidal de los x con los tethas
+        [ip, p]= max(A,[],2);     % Saco el indice del mayor de cada fila, eso me dice la clase
 
 
 % =========================================================================

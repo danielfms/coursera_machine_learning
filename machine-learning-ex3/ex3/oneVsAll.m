@@ -30,6 +30,14 @@ X = [ones(m, 1) X];
 % Note: For this assignment, we recommend using fmincg to optimize the cost
 %       function. It is okay to use a for-loop (for c = 1:num_labels) to
 %       loop over the different classes.
+    
+        for c=1: num_labels
+            initial_theta = zeros(n + 1, 1);
+            options = optimset('GradObj', 'on', 'MaxIter', 50);
+            [theta] = fmincg (@(t)(lrCostFunction(t, X, (y == c), lambda)),initial_theta, options);
+            all_theta(c,:)= theta(:);
+        end;
+    
 %
 %       fmincg works similarly to fminunc, but is more efficient when we
 %       are dealing with large number of parameters.
